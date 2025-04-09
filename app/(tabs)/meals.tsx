@@ -1,6 +1,4 @@
 import {
-  Alert,
-  Button,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,14 +8,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import MealsLog from "../components/MealsLog";
 import { useState } from "react";
 
-interface mealData {
-  [key: string]: {
-    meals: Array<{
-      name: string;
-      kcal: number;
-    }>;
-  };
-}
 
 const meals = () => {
   //Mock Meal Data: Breakfast, Lunch, Dinner
@@ -54,8 +44,9 @@ const meals = () => {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-        <ScrollView>
-          <Text className="text-3xl ml-10 mr-10 mt-20 font-semibold">Today's Meal</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/* Header*/}
+          <Text className="text-3xl ml-10 mr-10 mt-20 mb-5 font-semibold">Today's Meal</Text>
           {/* Meals Log Breakfast*/}
           <MealsLog 
             logTitle={"Breakfast"}
